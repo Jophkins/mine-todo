@@ -1,0 +1,36 @@
+.header {
+  margin: 15px 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &_title {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 28px;
+    cursor: default;
+
+    color: #000000;
+  }
+
+  &_account {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__circle {
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    &__name {
+      font-style: normal;
+      font-weight: 200;
+      font-size: 18px;
+      line-height: 21px;
+
+      cursor: pointer;
+
+      color: #000000;
+    }
+  }
+}

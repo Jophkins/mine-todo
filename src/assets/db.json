@@ -1,0 +1,13 @@
+{
+  "tasks": [
+    {"id":  1, "name": "Сходить в магазинчик", "priorityId": 1},
+    {"id":  2, "name": "Съездить в кино", "priorityId": 2},
+    {"id":  3, "name": "Проверить дверь", "priorityId": 1},
+    {"id":  4, "name": "Не спать целую ночь", "priorityId": 3}
+  ],
+  "priority": [
+    {"id":  1, "name": "Low", "color": "#6B68FF"},
+    {"id":  2, "name": "Medium", "color": "#FFC83C"},
+    {"id":  3, "name": "High", "color": "#EB592B"}
+  ]
+}

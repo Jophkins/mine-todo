@@ -1,0 +1,50 @@
+.countWrapper {
+  margin-top: 30px;
+  ul {
+    display: flex;
+    justify-content: space-around;
+
+    .total {
+      padding: 4px;
+      background: #DEDDFF;
+      border-radius: 4px;
+
+      cursor: default;
+
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 14px;
+
+      color: #1A17BF;
+    }
+    .done {
+      padding: 4px;
+      background: #CAF0D5;
+      border-radius: 4px;
+
+      cursor: default;
+
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 14px;
+
+      color: #10942D;
+    }
+    .inProgress {
+      padding: 4px;
+      background: #F2D9D9;
+      border-radius: 4px;
+
+      cursor: default;
+
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 14px;
+
+      color: #EB592B;
+    }
+  }
+}
