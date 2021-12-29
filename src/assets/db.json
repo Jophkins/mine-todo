@@ -1,13 +1,13 @@
 {
   "tasks": [
-    {"id":  1, "name": "Сходить в магазинчик", "priorityId": 1},
-    {"id":  2, "name": "Съездить в кино", "priorityId": 2},
-    {"id":  3, "name": "Проверить дверь", "priorityId": 1},
-    {"id":  4, "name": "Не спать целую ночь", "priorityId": 3}
+    {"id":  1, "text": "Сходить в магазинчик", "date": "Jan 05", "priorityId": 1},
+    {"id":  2, "text": "Покушац", "date": "Jan 05", "priorityId": 2},
+    {"id":  3, "text": "Проверить дверь", "date": "Jan 05", "priorityId": 1},
+    {"id":  4, "text": "Не спать целую ночь", "date": "Jan 05", "priorityId": 3}
   ],
   "priority": [
-    {"id":  1, "name": "Low", "color": "#6B68FF"},
-    {"id":  2, "name": "Medium", "color": "#FFC83C"},
-    {"id":  3, "name": "High", "color": "#EB592B"}
+    {"id":  1, "text": "Low", "color": "#6B68FF"},
+    {"id":  2, "text": "Medium", "color": "#FFC83C"},
+    {"id":  3, "text": "High", "color": "#EB592B"}
   ]
 }

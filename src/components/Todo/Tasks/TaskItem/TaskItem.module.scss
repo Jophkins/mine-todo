@@ -1,0 +1,69 @@
+.tasks {
+  margin-top: 20px;
+
+  &_item {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 3% 55% 2% 18% 10% 5% 3%;
+    justify-content: center;
+    align-content: center;
+
+    .tasks_item__badge {
+      justify-self: start;
+
+      svg:hover {
+        fill: #c4c4c4;
+        path {
+          stroke: #fff;
+        }
+        cursor: pointer;
+      }
+    }
+
+    &__text {
+      font-style: normal;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 21px;
+
+      color: #585858;
+    }
+
+    &__priority_point {
+    }
+
+    &__priority_text {
+      font-style: normal;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 21px;
+      
+      cursor: pointer;
+
+      color: #464646;
+    }
+
+    &__date {
+      font-style: normal;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 21px;
+
+      color: #9B9B9B;
+    }
+
+    &__checkbox {
+      justify-self: center;
+    }
+
+    &__recycle {
+      justify-self: center;
+      &:hover {
+        rect {
+          fill: #000;
+        }
+      cursor: pointer;
+      }
+    }
+  }
+}
