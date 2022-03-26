@@ -1,13 +1,56 @@
 {
   "tasks": [
-    {"id":  1, "text": "Сходить в магазинчик", "date": "Jan 05", "priorityId": 1},
-    {"id":  2, "text": "Покушац", "date": "Jan 05", "priorityId": 2},
-    {"id":  3, "text": "Проверить дверь", "date": "Jan 05", "priorityId": 1},
-    {"id":  4, "text": "Не спать целую ночь", "date": "Jan 05", "priorityId": 3}
+    {
+      "id": 1,
+      "completed": false,
+      "text": "Сходить в магазинчик",
+      "date": "Jan 30",
+      "priorityId": 1
+    },
+    {
+      "id": 2,
+      "completed": true,
+      "text": "Покушац",
+      "date": "Jan 30",
+      "priorityId": 2
+    },
+    {
+      "id": 3,
+      "completed": false,
+      "text": "Проверить дверь",
+      "date": "Jan 30",
+      "priorityId": 1
+    },
+    {
+      "completed": false,
+      "text": "Не спать целую ночь",
+      "date": "Jan 25",
+      "priorityId": 3,
+      "id": 4
+    },
+    {
+      "completed": false,
+      "text": "data",
+      "date": "Jan 25",
+      "priorityId": 1,
+      "id": 5
+    }
   ],
-  "priority": [
-    {"id":  1, "text": "Low", "color": "#6B68FF"},
-    {"id":  2, "text": "Medium", "color": "#FFC83C"},
-    {"id":  3, "text": "High", "color": "#EB592B"}
+  "priorities": [
+    {
+      "id": 1,
+      "text": "Low",
+      "color": "#6B68FF"
+    },
+    {
+      "id": 2,
+      "text": "Medium",
+      "color": "#FFC83C"
+    },
+    {
+      "id": 3,
+      "text": "High",
+      "color": "#EB592B"
+    }
   ]
 }

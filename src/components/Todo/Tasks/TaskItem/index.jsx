@@ -1,27 +1,31 @@
 import React from 'react';
 
-import Badge from "./Badge";
+import Badge from "./Badge/Badge";
 import Priority from "./Priority";
 import Date from "./Date";
 import Recycle from "./Recycle";
 
 import styles from "./TaskItem.module.scss";
 
-function TasksItem(props) {
+function TasksItem({text, priority, date, completed}) {
+
+  const removeTask = () => {
+    if(window.confirm('Действительно удалить?')) {
+      console.log();
+    }
+  }
+
   return (
     <div className={styles.tasks}>
       <ul>
         <li className={styles.tasks_item}>
-          <Badge />
+          <Badge completed={completed} />
           <div className={styles.tasks_item__text}>
-            {props.text}
+            {text}
           </div>
-          <Priority priorityColor={props.priorityColor} priority={props.priority} />
-          <Date date={props.date} />
-          <div className={styles.tasks_item__checkbox}>
-            <input type="checkbox"/>
-          </div>
-          <Recycle />
+          <Priority priorityColor={2} priority={priority} />
+          <Date date={date} />
+          <Recycle removeTask={removeTask}/>
         </li>
       </ul>
     </div>
