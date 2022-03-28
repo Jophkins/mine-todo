@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from "./TaskItem.module.scss";
 
-function Priority({priorityColor, priority}) {
+function Priority({priorityColor, priorityText}) {
   return (
     <>
       <div className={styles.tasks_item__priority_point}>
@@ -10,7 +10,7 @@ function Priority({priorityColor, priority}) {
         </svg>
       </div>
       <div className={styles.tasks_item__priority_text}>
-        {priority} Priority
+        {priorityText} Priority
       </div>
     </>
   );

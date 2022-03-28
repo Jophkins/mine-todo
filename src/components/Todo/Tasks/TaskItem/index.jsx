@@ -7,11 +7,11 @@ import Recycle from "./Recycle";
 
 import styles from "./TaskItem.module.scss";
 
-function TasksItem({text, priority, date, completed}) {
+function TasksItem({id, text, priority, date, completed, removeTask}) {
 
-  const removeTask = () => {
+  const removeHandler = () => {
     if(window.confirm('Действительно удалить?')) {
-      console.log();
+      removeTask(id);
     }
   }
 
@@ -23,9 +23,9 @@ function TasksItem({text, priority, date, completed}) {
           <div className={styles.tasks_item__text}>
             {text}
           </div>
-          <Priority priorityColor={2} priority={priority} />
+          <Priority priorityColor={priority.color} priorityText={priority.text} />
           <Date date={date} />
-          <Recycle removeTask={removeTask}/>
+          <Recycle removeHandler={removeHandler}/>
         </li>
       </ul>
     </div>

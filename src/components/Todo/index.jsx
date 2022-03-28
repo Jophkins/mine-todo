@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 
 import Header from "./Header";
 import TasksCount from "./TasksCount";
@@ -13,8 +13,7 @@ function Todo() {
   const [tasksCount, setTasksCount] = useState([]);
 
   useEffect(() => {
-
-    axios.get('http://localhost:3001/tasks?_expand=priority').then(({data}) => {
+    axios.get('http://localhost:3001/tasks').then(({data}) => {
       setTasks(data);
     });
     axios.get('http://localhost:3001/priorities').then(({data}) => {
@@ -22,40 +21,54 @@ function Todo() {
     });
   }, []);
 
-  const addTask = (userInput) => {
+  useEffect(() => {
+    axios.get('http://localhost:3001/tasks').then(({data}) => {
+      setTasksCount({
+        total: data.length,
+        done: data.filter(item => item.completed === true).length,
+        inProgress: data.filter(item => item.completed === false).length
+      });
+    });
+  }, [tasks])
+
+    const addTask = (userInput) => {
     if (userInput) {
-      const newTask = {
+      axios.post('http://localhost:3001/tasks', {
         id: Math.random().toString(36).substr(2, 9),
         completed: false,
         text: userInput,
-        date: "Apr 1",
+        date: new Date().toDateString().split(' ').splice(1,2).join(' '),
         priorityId: 1
-      }
-      setTasks([...tasks, newTask]);
-      console.log(priority);
-      console.log(tasks);
+      }).then(({data}) => {
+        const newTask = {
+          id: data.id,
+          competed: data.completed,
+          text: data.text,
+          date: data.date,
+          priorityId: data.priorityId
+        };
+        setTasks([...tasks, newTask]);
+      })
     }
   }
 
-  const onRemove = () => {
-    const newTasks = [
-      ...tasks,
-      []
-    ]; // Костыль! Добавляю пустой массив в tasks. Что бы его длина обновилась и произошел ререндер.
-    // const newTasks = tasks.filter(item => item.props.idKey !== id)
-    setTasks(newTasks);
+  const removeTask = (id) => {
+    axios.delete('http://localhost:3001/tasks/' + id).then(() => {
+      setTasks([...tasks.filter((item) => item.id !== id)])
+    });
   }
 
   return (
     <>
       <Header/>
-      <TasksCount />
-      <TaskAddForm addTask={addTask} />
+      <TasksCount count={tasksCount} />
+      <TaskAddForm addTask={addTask}/>
       {(tasks.length) ? (
-        <Tasks tasks={tasks}/>
+        <Tasks tasks={tasks} priority={priority} removeTask={removeTask}/>
       ) : (
         'Loading...'
       )}
+      <button onClick={() => console.log(tasksCount)}>CHECKER</button>
     </>
   );
 }
