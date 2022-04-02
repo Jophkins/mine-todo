@@ -7,7 +7,7 @@ import Recycle from "./Recycle";
 
 import styles from "./TaskItem.module.scss";
 
-function TasksItem({id, text, priority, date, completed, removeTask}) {
+function TasksItem({id, text, priority, date, completed, removeTask, completeToggle}) {
 
   const removeHandler = () => {
     if(window.confirm('Действительно удалить?')) {
@@ -15,11 +15,19 @@ function TasksItem({id, text, priority, date, completed, removeTask}) {
     }
   }
 
+  const checkHandler = () => {
+    completeToggle(id, completed);
+  }
+
   return (
     <div className={styles.tasks}>
       <ul>
         <li className={styles.tasks_item}>
-          <Badge completed={completed} />
+          {/*<Badge completed={completed} />*/}
+          <label className={styles.tasks_item__checkbox}>
+            <input className={styles.default_check} type="checkbox" checked={completed} onChange={checkHandler} />
+            <span className={styles.custom_check} />
+          </label>
           <div className={styles.tasks_item__text}>
             {text}
           </div>

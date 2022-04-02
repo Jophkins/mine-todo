@@ -9,30 +9,37 @@
     },
     {
       "id": 2,
-      "completed": true,
+      "completed": false,
       "text": "Покушац",
       "date": "Jan 30",
       "priorityId": 2
     },
     {
       "id": 3,
-      "completed": false,
+      "completed": true,
       "text": "Проверить дверь",
       "date": "Jan 30",
       "priorityId": 1
     },
     {
-      "completed": false,
+      "completed": true,
       "text": "Не спать целую ночь",
       "date": "Jan 25",
       "priorityId": 3,
       "id": 4
     },
     {
-      "id": "s1qp8jchd",
+      "id": "3bdly5k0l",
+      "completed": true,
+      "text": "Переехать",
+      "date": "Apr 01",
+      "priorityId": 1
+    },
+    {
+      "id": "x5jpp2vpz",
       "completed": false,
-      "text": "dadada",
-      "date": "Mar 28",
+      "text": "Починить монитор",
+      "date": "Apr 01",
       "priorityId": 1
     }
   ],

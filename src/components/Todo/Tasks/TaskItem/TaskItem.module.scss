@@ -53,7 +53,53 @@
     }
 
     &__checkbox {
-      justify-self: center;
+      .default_check {
+        display: none;
+
+        ~ .custom_check {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 16px;
+          height: 16px;
+          border: 2px solid #000;
+          position: relative;
+          transition: all 0.4s ease;
+          cursor: pointer;
+          border-radius: 0.375rem;
+
+          &:after {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            transition: all 0.4s ease;
+            visibility: hidden;
+            height: 7px;
+            width: 3px;
+            margin-top: -1px;
+            border-bottom: 2px solid #fff;
+            border-right: 2px solid #fff;
+            transform: rotate(45deg);
+          }
+        }
+
+        &:disabled {
+          ~ .custom_check {
+            opacity: 0.3;
+            cursor: not-allowed;
+          }
+        }
+
+        &:checked {
+          ~ .custom_check {
+            background-color: #000;
+
+            &:after {
+              visibility: visible;
+            }
+          }
+        }
+      }
     }
 
     &__recycle {

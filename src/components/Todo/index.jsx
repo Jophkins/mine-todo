@@ -58,13 +58,25 @@ function Todo() {
     });
   }
 
+  const completeToggle = (id, completed) => {
+    axios.patch('http://localhost:3001/tasks/' + id, {
+      completed: !completed
+    });
+    setTasks([
+      ...tasks.map((item) => {
+        return item.id === id ? {...item, completed: !item.completed} : {...item}
+      })
+    ]);
+    console.log(id, completed)
+  }
+
   return (
     <>
       <Header/>
       <TasksCount count={tasksCount} />
       <TaskAddForm addTask={addTask}/>
       {(tasks.length) ? (
-        <Tasks tasks={tasks} priority={priority} removeTask={removeTask}/>
+        <Tasks tasks={tasks} priority={priority} removeTask={removeTask} completeToggle={completeToggle}/>
       ) : (
         'Loading...'
       )}
